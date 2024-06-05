@@ -1,0 +1,241 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+
+
+
+.wraper{
+  margin: 0%;
+  padding: 0%;
+  background-color: #dcc9b7;
+}
+.navb{
+  margin: 0;
+
+}
+
+.desplegable{
+  --bs-bg-opacity: 1;
+  background-color:  #78593e !important;
+}
+ .image-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      background-color: #fff;
+    }
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-100%, -50%);
+      font-size: 24px;
+      font-weight: bold;
+      text-align: start;
+      color: #f9f9f9;
+      padding: 10px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      background-image: url('https://concepto.de/wp-content/uploads/2018/08/monta%C3%B1as-e1533762816593.jpg');
+      background-size: cover;
+      background-clip: text;
+    }
+
+.firstimg{
+  position: relative;
+  top: 50px;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  filter:brightness(0.5);
+  
+
+}
+
+.bg-nav{
+  background-color: #806043;
+}
+
+
+.book-container {
+  display: flex;
+  justify-content: center;
+
+  perspective: 600px;
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(-30deg);
+  }
+}
+
+.book {
+
+  width: 200px;
+  height: 300px;
+
+  transform-style: preserve-3d;
+  transform: rotateY(-30deg);
+  transition: 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+}
+
+.book-container:hover .book,
+.book-container:focus .book {
+  transform: rotateY(0deg);
+}
+
+.book> :first-child {
+
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 200px;
+  height: 300px;
+  transform: translateZ(15px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 5px 5px 20px #666;
+}
+
+.book::before {
+  position: absolute;
+  content: ' ';
+  background-color: blue;
+  left: 0;
+  top: 1px;
+  width: 28px;
+  height: 298px;
+  transform: translateX(184px) rotateY(90deg);
+  background: linear-gradient(90deg,
+      #fff 0%,
+      #f9f9f9 5%,
+      #fff 10%,
+      #f9f9f9 15%,
+      #fff 20%,
+      #f9f9f9 25%,
+      #fff 30%,
+      #f9f9f9 35%,
+      #fff 40%,
+      #f9f9f9 45%,
+      #fff 50%,
+      #f9f9f9 55%,
+      #fff 60%,
+      #f9f9f9 65%,
+      #fff 70%,
+      #f9f9f9 75%,
+      #fff 80%,
+      #f9f9f9 85%,
+      #fff 90%,
+      #f9f9f9 95%,
+      #fff 100%);
+}
+
+.book::after {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 200px;
+  height: 300px;
+  transform: translateZ(-15px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: -10px 0 50px 10px #666;
+}
+
+
+.offcanvas.offcanvas-start {
+  transition: transform 0.5s ease-in-out;
+}
+
+.offcanvas.offcanvas-start.show {
+  transform: translateX(0%);
+}
+
+.offcanvas.offcanvas-start:not(.show) {
+  transform: translateX(-100%);
+}
+
+
+
+
+
+.montserrat-title {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.oswald-author {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.montserrat-descripcion {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.price-product {
+  background-color: yellow;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px;
+  margin: 0%;
+  
+  display: flex;
+ align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-product{
+padding: 5px;
+border-radius: 10px 10px 10px 10px;
+
+display: flex;
+
+
+}
+.price-btn-product{
+justify-content:space-around;
+}
+
+
+.scrollbox {
+  overflow: auto;
+  width: 400px;
+  max-height: 200px;
+  
+  --g:radial-gradient(55% 20px, #0009, #0000);  
+  background: 
+    linear-gradient(#fff 10px, #0000 40px calc(100% - 40px),#fff calc(100% - 10px)) local, 
+    var(--g) top   /100% 200%,    
+    var(--g) bottom/100% 200%;
+}
+
+
+
+
+
+
+
+
+
