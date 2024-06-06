@@ -830,7 +830,7 @@ function mostrarLibros() {
         
         <div class="container-product d-flex p-5 col-sm-6 col-md-4 col-xl-3">
         <div class="row justify-content-center">
-            <a class="book-container" target="_blank" rel="noreferrer noopener">
+            <a class="book-container" href="html/shop.html" onclick="redirectToShop('${producto.id}', '${producto.name}', '${producto.autor}', '${producto.price}', '${producto.imagen}', '${producto.descripcion}')" target="_blank" rel="noreferrer noopener">
                 <div class="book">
                     <img alt="${producto.name}" src="assets/${producto.imagen}">
                 </div>
@@ -867,6 +867,7 @@ function displayProductDetails() {
 
       // Establecer el enlace del producto con su ID
       document.getElementById('productLink').setAttribute('data-id', producto.id);
+      document.title = `${producto.nombre} - Libreria El Gitano`;
     } else {
         // Manejar el caso donde no se encuentren datos del producto
         console.error('No se encontraron datos del producto para mostrar.');
