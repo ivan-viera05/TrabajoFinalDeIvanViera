@@ -33,3 +33,52 @@ texto largo
         </div>
       </div>     
     </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+// Función para redirigir a la página de detalles del producto
+function redirectToShop(id, name, autor, price, imagen, descripcion) {
+    const params = new URLSearchParams({
+        id: id,
+        name: name,
+        autor: autor,
+        price: price,
+        imagen: imagen,
+        descripcion: descripcion
+    }).toString();
+    const url = `html/shop.html?${params}`;
+    window.open(url, '_blank', 'noreferrer noopener');
+}
+
+// Función para obtener los parámetros de la URL en la página de detalles del producto
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        id: params.get('id'),
+        name: params.get('name'),
+        autor: params.get('autor'),
+        price: params.get('price'),
+        imagen: params.get('imagen'),
+        descripcion: params.get('descripcion')
+    };
+}
