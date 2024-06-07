@@ -17,10 +17,7 @@
   padding: 0%;
   background-color: #dcc9b7;
 }
-.navb{
-  margin: 0;
 
-}
 
 .desplegable{
   --bs-bg-opacity: 1;
@@ -170,15 +167,50 @@
   transform: translateX(-100%);
 }
 
+.iconos{
+ font-size: 2rem;
+  display: flex;
+}
+.colordelsol{
+  color: #eeff00;
+}
+.btn-color{
+  background-color: #0000;
+  border: none;
+}
+/* Tema oscuro */
+.fondo-negro {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+ .icon-transition {
+  transition: transform 0.5s ease;
+}
+.icon-rotate {
+  transform: rotate(180deg);
+}
 
+.navegador-oscuro {
+  background-color: rgb(69, 64, 64);
+}
 
-
+.pie-oscuro {
+  background-color: rgb(70, 64, 64);
+}
+.no-cambiar-color {
+  color:#000;
+}
+/* Ajustes para otros elementos */
+.text-light-oscuro {
+  color: lightgray;
+}
 
 .montserrat-title {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
+  
 }
 
 .oswald-author {
