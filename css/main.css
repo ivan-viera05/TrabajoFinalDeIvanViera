@@ -59,7 +59,9 @@
 .bg-nav{
   background-color: #806043;
 }
-
+.iconos:hover{
+  font-size: 2.5rem;
+}
 
 .book-container {
   display: flex;
