@@ -828,7 +828,7 @@ function mostrarLibros() {
     libros.forEach(producto => {
         let productoHTML = `
         
-        <div class="container-product d-flex p-5 col-sm-6 col-md-4 col-xl-3">
+        <div class="container-product d-flex p-5 col-sm-6 col-md-4 col-xl-3" id="${producto.name}">
         <div class="row justify-content-center">
             <a class="book-container" href="html/shop.html" onclick="redirectToShop('${producto.id}', '${producto.name}', '${producto.autor}', '${producto.price}', '${producto.imagen}', '${producto.descripcion}')" target="_blank" rel="noreferrer noopener">
                 <div class="book">
@@ -836,10 +836,10 @@ function mostrarLibros() {
                 </div>
             </a>
             <div class="descripcion-product col-12 mt-4 text-center">
-                <h3 class="title-product montserrat-title">${producto.name}</h3>
-                <h4 class="autor-product oswald-author">${producto.autor}</h4>
+                <h3  class="title-product  montserrat-title">${producto.name}</h3>
+                <h4 id="h4producto" class="autor-product  oswald-author">${producto.autor}</h4>
                 <div class="d-flex price-btn-product justify-content-around align-items-center">
-                    <p class="price-product">$${producto.price}</p>
+                    <p  class="price-product no-cambiar-color">$${producto.price}</p>
                     <button id="addToCartBtn" class="btn-product mx-1 border d-inline" onclick="agregarAlCarrito()">Agregar al carrito</button>
                 </div>
             </div>
@@ -851,106 +851,11 @@ function mostrarLibros() {
 }
 mostrarLibros();
 
-
-function displayProductDetails() {
-  // Obtener los detalles del producto desde el localStorage (o desde otro origen de datos)
-  let producto = JSON.parse(localStorage.getItem('productToDisplay'));
-
-  // Verificar si hay datos válidos del producto
-  if (producto) {
-      // Mostrar los detalles del producto en la página shop.html
-      document.getElementById('productImage').setAttribute('src', `../assets/${producto.imagen}`);
-      document.getElementById('productName').textContent = producto.nombre;
-      document.getElementById('productAutor').textContent = producto.autor;
-      document.getElementById('productPrice').textContent = `$${producto.precio}`;
-      document.getElementById('productDescripcion').textContent = producto.descripcion;
-
-      // Establecer el enlace del producto con su ID
-      document.getElementById('productLink').setAttribute('data-id', producto.id);
-      document.title = `${producto.nombre} - Libreria El Gitano`;
-    } else {
-        // Manejar el caso donde no se encuentren datos del producto
-        console.error('No se encontraron datos del producto para mostrar.');
-    }
-}
-
-// Función para agregar el producto al carrito
-function agregarAlCarrito() {
-    // Obtener los detalles del producto actualmente mostrado
-    let id = document.getElementById('productLink').getAttribute('data-id');
-    let nombre = document.getElementById('productName').textContent;
-    let autor = document.getElementById('productAutor').textContent;
-    let precio = document.getElementById('productPrice').textContent.replace('$', ''); // Quitar el símbolo de $
-    let imagen = document.getElementById('productImage').getAttribute('src');
-    let descripcion = document.getElementById('productDescripcion').textContent;
-
-    // Crear un objeto con los detalles del producto
-    let producto = {
-        id: id,
-        nombre: nombre,
-        autor: autor,
-        precio: parseFloat(precio), // Convertir a número
-        imagen: imagen,
-        descripcion: descripcion,
-        cantidad: 1 // Puedes agregar más propiedades según sea necesario
-    };
-
-    // Obtener el array de productos del localStorage o inicializarlo si está vacío
-    let productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Verificar si el producto ya está en el carrito (usando el ID como identificador único)
-    let productoExistente = productosEnCarrito.find(item => item.id === producto.id);
-
-    if (productoExistente) {
-        // Si el producto ya existe, aumentar la cantidad
-        productoExistente.cantidad++;
-    } else {
-        // Si el producto no está en el carrito, agregarlo
-        productosEnCarrito.push(producto);
-    }
-
-    // Guardar el array actualizado en el localStorage
-    localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-
-    // Mostrar un mensaje de confirmación (opcional)
-    alert(`El producto "${nombre}" se agregó al carrito.`);
-
-    // Opcional: Redirigir a la página del carrito o actualizar la interfaz de usuario
-    // window.location.href = 'ruta-a-la-pagina-del-carrito.html';
-}
-
-// Función para redirigir a la página de productos
-function redirectToShop(id, nombre, autor, precio, imagen, descripcion) {
-    // Guardar los detalles del producto seleccionado en el localStorage
-    let productToDisplay = {
-        id: id,
-        nombre: nombre,
-        autor: autor,
-        precio: precio,
-        imagen: imagen,
-        descripcion: descripcion
-    };
-
-    // Guardar en localStorage para mostrar en shop.html
-    localStorage.setItem('productToDisplay', JSON.stringify(productToDisplay));
-}
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'));
-  var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
-    offcanvasEl.addEventListener('hide.bs.offcanvas', function () {
-      offcanvasEl.style.transform = 'translateX(-100%)';
-    });
-    offcanvasEl.addEventListener('show.bs.offcanvas', function () {
-      offcanvasEl.style.transform = 'translateX(0%)';
-    });
-    return new bootstrap.Offcanvas(offcanvasEl);
-  });
-});
-
-
-
-
+document.addEventListener('keyup',e=>{
+  if (e.target.matches('#searchForm')){
+      document.querySelectorAll("#title-product").forEach(producto=>{
+        console.log(producto.textContent.toLowerCase().includes(e.target.value));
+      })
+  }
+  
+    })
