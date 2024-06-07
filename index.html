@@ -25,76 +25,86 @@
 
 
 
-    <nav class="navbar bg-nav fixed-top  p-2">
+  <nav class="navbar navbarr bg-nav fixed-top  p-2">
 
-      <div class="container-fluid text-light d-flex justify-content-start">
-
-        <h1 class="mx-5 col order-1 ">El Gitano</h1>
-        <form class="d-flex order-5 " role="search">
-          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary text-light" type="submit">Search</button>
-        </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+    <div class="container-fluid text-light d-flex  justify-content-between align-items-center   ">
+     
+    
+        <h1 class="mx-5  montserrat-title order-2">El Gitano</h1>
+        <button class="navbar-toggler order-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
           aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-          <span class="bi bi-list iconospam "></span>
+          <span class="bi bi-list iconospam icon-transition iconos"></span>
         </button>
+        <button id="cambiarColorBtn" class="icon-button order-3 btn-color icon-transition "><i id="icon"  class="bi bi-sun-fill iconos colordelsol"></i></button>
 
-        <div class="offcanvas offcanvas-start  desplegable" tabindex="-1" id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">El Gitano</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active text-light text-center" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  text-light text-center" href="#">Contactanos</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-light text-center" href="#" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  Generos
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item text-light" href="#">Accion</a></li>
-                  <li><a class="dropdown-item text-light" href="#">policial</a></li>
-                  <li><a class="dropdown-item text-light" href="#">Ciencia ficcion</a></li>
-                  <li><a class="dropdown-item text-light" href="#">terror</a></li>
-                  <li><a class="dropdown-item text-light" href="#">drama</a></li>
-                  <li><a class="dropdown-item text-light" href="#">romantica</a></li>
 
-                </ul>
-              </li>
-            </ul>
-
-          </div>
+      <div class="offcanvas offcanvas-start  desplegable" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">El Gitano</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
-      </div>
-    </nav>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active text-light text-center" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-light text-center" href="#">Contactanos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light text-center" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Generos
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item text-light" href="#">Accion</a></li>
+                <li><a class="dropdown-item text-light" href="#">policial</a></li>
+                <li><a class="dropdown-item text-light" href="#">Ciencia ficcion</a></li>
+                <li><a class="dropdown-item text-light" href="#">terror</a></li>
+                <li><a class="dropdown-item text-light" href="#">drama</a></li>
+                <li><a class="dropdown-item text-light" href="#">romantica</a></li>
 
-    <div class="image-container">
-      <img src="https://turismo.buenosaires.gob.ar/sites/turismo/files/libreria-avila-1500x610.jpg" class="firstimg "
-        alt="Sample Image">
-      <div class="">
-        <h3 class="text-overlay fs-1">Un libro es un regalo para <br> siempre</h3>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
       </div>
     </div>
+  </nav>
+
+  <div class="image-container">
+    <img src="https://turismo.buenosaires.gob.ar/sites/turismo/files/libreria-avila-1500x610.jpg" class="firstimg "
+      alt="Sample Image">
+    <div class="">
+      <h3 class="text-overlay fs-1 ">Un libro es un regalo para <br> siempre</h3>
+    </div>
+  </div>
 
 
 
-    <main class="container-fluid main">
-      <h2 class="text-center fs-2 h2 montserrat-title">Todos los productos</h2>
-      <article class="d-flex justify-content-center">
-        <div class="row justify-content-center" id="productos">
+  <main class="container-fluid main">
+    <div class="row d-flex">
+      <div class="col-8 p-5">
+        <h2 class="text-end fs-2 h2 montserrat-title  col-8">Todos los productos</h2>
+      </div>
+      <div class="col-4 p-5">
+        <form class="d-flex order-5 " id="searchForm" role="search">
+          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+          
+        </form>
+      </div>
 
-        </div>
-      </article>
-    </main>
- 
+    </div>
+    <article class="d-flex justify-content-center">
+      <div class="row justify-content-center" id="productos">
+
+      </div>
+    </article>
+  </main>
+
 
 
   <footer class="container-fluid bg-nav">
@@ -125,6 +135,9 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/efects.js"></script>
 </body>
 
 </html>
