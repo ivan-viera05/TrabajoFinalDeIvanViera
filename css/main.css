@@ -268,7 +268,8 @@ justify-content:space-around;
 
 
 
-
-
-
+/* filtrado de busqueda */
+.filtrado{
+  display: none;
+}
 
