@@ -171,15 +171,6 @@ let libros = [
     descripcion: "es la antología de literatura diabólica más completa que existe en el mundo. Este volumen recoge cincuenta y seis piezas largas y más de cuatrocientos pasajes breves de índole perniciosa: poemas, cuentos, ensayos y extractos de novelas con Satán como figura central o secundario imprescindible. Cada texto seleccionado es de un autor o autora distinto (nadie repite), y de toda clase de perversidad literaria: de Iris Murdoch a Sara Mesa, pasando por Clive Barker, Nathaniel Hawthorne, Sharon Olds, Dante Alighieri, Joan Aiken, Kelly Link, Charles Baudelaire, Irene Solà, Ambrose Bierce, Ursula K. Le Guin, Ana María Matute, John Milton, Samanta Schweblin, Ray Bradbury, Neil Gaiman, Elisa Victoria, Michael Chabon, Belén Gopegui, Mark Twain, Karen Russell, Shirley Jackson, Mijaíl Bulgákov y muchísimos más."
   },
   {
-    name: "El hombre perdido",
-    genero: "terror",
-    id: 131,
-    autor: "Jane Harper",
-    imagen: "terror/elhombreperdido-terror.jpg",
-    price: 4155,
-    descripcion:"Quemado por el implacable sol del verano austral, el cuerpo de Cameron Bright es hallado sin vida a varias horas en coche de cualquier lugar habitado. Y aunque la policía da por hecho que se trata de un suicidio, nadie se explica las razones que han llevado a cometer semejante acto a un hombre tan inteligente y encantador como Cam. Al tiempo que toda la comunidad se prepara para un emotivo entierro la víspera de Navidad, Nathan, el mayor de los Bright, empeñado en aclarar los cabos sueltos de la muerte de Cam, se enfrenta a un abismo de silencios y mentiras que amenaza con destruir los delicados lazos familiares. La crítica ha dicho...Jane Harper se consolida como la reina de la novela negra australiana con este inquietante misterio familiar.The Sunday Times Su mejor libro hasta el momento.Evening Standard : Una obra maestra del crimen. El paisaje y la cultura de este territorio remoto de Australia son evocados de forma magnífica a medida que se revelan los secretos familiares. People Me encantó. Lo devore en un día. ¡Jane Harper se supera con esta obra!Liane Moriarty"
-  },
-  {
     name: "El regalo",
     genero: "terror",
     id: 132,
@@ -846,16 +837,106 @@ function mostrarLibros() {
         </div>
     </div>
         `;
+      
         contenedor.innerHTML += productoHTML;
     });
+    
+    
 }
-mostrarLibros();
 
-document.addEventListener('keyup',e=>{
-  if (e.target.matches('#searchForm')){
-      document.querySelectorAll("#title-product").forEach(producto=>{
-        console.log(producto.textContent.toLowerCase().includes(e.target.value));
-      })
-  }
-  
-    })
+function quitarAcentos(texto) {
+  return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  mostrarLibros(libros);
+});
+// Manejar la búsqueda de libros en tiempo real
+const formBusqueda = document.getElementById('searchForm');
+const inputBusqueda = document.querySelector('.buscador');
+
+formBusqueda.addEventListener('input', function() {
+    const valorBusqueda = quitarAcentos(inputBusqueda.value.trim().toLowerCase());
+
+    const librosFiltrados = libros.filter(libro =>
+        quitarAcentos(libro.name).includes(valorBusqueda) || quitarAcentos(libro.autor).includes(valorBusqueda)
+    );
+
+    mostrarLibrosFiltrados(librosFiltrados);
+});
+
+// Función para mostrar libros filtrados
+function mostrarLibrosFiltrados(librosFiltrados) {
+    let contenedor = document.querySelector('#productos');
+    contenedor.innerHTML = ''; // Limpiar contenedor antes de agregar libros filtrados
+
+    librosFiltrados.forEach(libro => {
+        let productoHTML = `
+            <div class="container-product d-flex p-5 col-sm-6 col-md-4 col-xl-3" data-id="${libro.id}">
+                <div class="row justify-content-center">
+                    <a class="book-container" href="html/shop.html" onclick="redirectToShop('${libro.id}', '${libro.name}', '${libro.autor}', '${libro.price}', '${libro.imagen}', '${libro.descripcion}')" target="_blank" rel="noreferrer noopener">
+                        <div class="book">
+                            <img alt="${libro.name}" src="assets/${libro.imagen}">
+                        </div>
+                    </a>
+                    <div class="descripcion-product col-12 mt-4 text-center">
+                        <h3 class="title-product montserrat-title">${libro.name}</h3>
+                        <h4 class="autor-product oswald-author">${libro.autor}</h4>
+                        <div class="d-flex price-btn-product justify-content-around align-items-center">
+                            <p class="price-product no-cambiar-color">$${libro.price}</p>
+                            <button class="btn-product mx-1 border d-inline" onclick="agregarAlCarrito()">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        contenedor.innerHTML += productoHTML;
+    });
+
+    if (librosFiltrados.length === 0) {
+        contenedor.innerHTML = '<p>No se encontraron libros que coincidan con la búsqueda.</p>';
+    }
+}
+
+// Seleccionar elementos del menú desplegable
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownButton = document.querySelector('#dropdownMenuButton');
+
+// Agregar evento de clic a cada elemento del menú desplegable
+dropdownItems.forEach(item => {
+  item.addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar comportamiento predeterminado del enlace
+    
+    const generoSeleccionado = this.getAttribute('data-genero');
+    const precioSeleccionado = this.getAttribute('data-precio');
+    
+    let librosFiltrados = [];
+
+    if (generoSeleccionado) {
+      const genero = generoSeleccionado.toLowerCase();
+      librosFiltrados = libros.filter(libro => libro.genero.toLowerCase() === genero);
+    } else if (precioSeleccionado) {
+      if (precioSeleccionado === 'mayor-menor') {
+        librosFiltrados = [...libros].sort((a, b) => b.price - a.price);
+        dropdownButton.textContent = 'Mayor a Menor';
+      } else if (precioSeleccionado === 'menor-mayor') {
+        librosFiltrados = [...libros].sort((a, b) => a.price - b.price);
+        dropdownButton.textContent = 'Menor a Mayor';
+      } else if (precioSeleccionado === '10000-30000') {
+        librosFiltrados = libros.filter(libro => libro.price >= 10000 && libro.price <= 30000);
+        dropdownButton.textContent = '10000 - 30000';
+      } else if (precioSeleccionado === '1000-10000') {
+        librosFiltrados = libros.filter(libro => libro.price >= 1000 && libro.price <= 10000);
+        dropdownButton.textContent = '1000 - 10000';
+      } else if (precioSeleccionado === '30000+') {
+        librosFiltrados = libros.filter(libro => libro.price > 30000);
+        dropdownButton.textContent = '30000+';
+      }
+    }
+
+    // Mostrar libros filtrados
+    mostrarLibrosFiltrados(librosFiltrados);
+  });
+});
