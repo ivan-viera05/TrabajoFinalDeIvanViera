@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'));
   var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
@@ -9,17 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     return new bootstrap.Offcanvas(offcanvasEl);
   });
+
+
+
+
 });
-
-
-
-
-
-
-
-
-
-
 
 
 const btn = document.querySelector('#cambiarColorBtn');
