@@ -86,15 +86,47 @@
 
 
   <main class="container-fluid main">
+
     <div class="row d-flex">
-      <div class="col-8 p-5">
+      <div class="col-4">
+        <div class="row d-flex align-items-center">
+      
+           <h3 class=" col-3  py-5">filtrado:</h3>
+      <div class="dropdown col-3 py-5 ">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+          Géneros
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" data-genero="ciencia ficción">Ciencia ficción</a></li>
+          <li><a class="dropdown-item" href="#" data-genero="policial">Policial</a></li>
+          <li><a class="dropdown-item" href="#" data-genero="romance">Romance</a></li>
+          <li><a class="dropdown-item" href="#" data-genero="suspenso y drama">Suspenso y drama</a></li>
+          <li><a class="dropdown-item" href="#" data-genero="terror">Terror</a></li>
+        </ul>
+      </div>
+      <div class="dropdown col-3 mx-1 py-5 ">
+        
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Precio
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#" data-precio="mayor-menor">Mayor a menor</a></li>
+          <li><a class="dropdown-item" href="#" data-precio="menor-mayor">Menor a mayor</a></li>
+          <li><a class="dropdown-item" href="#" data-precio="10000-30000">10000 a 30000</a></li>
+          <li><a class="dropdown-item" href="#" data-precio="1000-10000">1000 a 10000</a></li>
+          <li><a class="dropdown-item" href="#" data-precio="30000+">Más de 30000</a></li>
+        </ul>
+      </div></div>
+    </div>
+  
+      <div class="col-4 py-5">
         <h2 class="text-end fs-2 h2 montserrat-title  col-8">Todos los productos</h2>
       </div>
-      <div class="col-4 p-5">
-        <form class="d-flex order-5 " id="searchForm" role="search">
-          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-          
-        </form>
+      <div class="col-4 py-5">
+        <form class="d-flex order-5" id="searchForm" role="search">
+          <input class="form-control me-2 buscador" type="search" placeholder="Buscar libros" aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
       </div>
 
     </div>
