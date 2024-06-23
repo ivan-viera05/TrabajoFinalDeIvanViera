@@ -39,7 +39,7 @@ const addToCartBtn = document.getElementById('addToCartBtn');
 // Agregar un listener para el clic
 addToCartBtn.addEventListener('click', function() {
     
-    // Obtener los detalles del producto del elemento que se está mostrando
+    //detalles del producto del elemento que se está mostrando
     let id = document.getElementById('productLink').getAttribute('data-id');
     let nombre = document.getElementById('productName').textContent;
     let autor = document.getElementById('productAutor').textContent;

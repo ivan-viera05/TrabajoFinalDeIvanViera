@@ -1,6 +1,6 @@
 
 
-
+//efecto al cerrar el navbar
 document.addEventListener('DOMContentLoaded', function () {
   var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'));
   var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
+//efecto para el btn de cambiar color toda la pagina
 const btn = document.querySelector('#cambiarColorBtn');
 const navbar = document.querySelector('.navbar');
 const footer = document.querySelector('footer');

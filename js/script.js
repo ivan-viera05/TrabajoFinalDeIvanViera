@@ -1,4 +1,3 @@
-
 // Función para quitar acentos de una cadena de texto
 function quitarAcentos(texto) {
   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdownItems = document.querySelectorAll('.dropdown-item');
   const dropdownButton = document.querySelector('#dropdownMenuButton');
 
-  // Agregar evento de clic a cada elemento del menú desplegable
+  //evento de clic a cada elemento del menú desplegable
   dropdownItems.forEach(item => {
       item.addEventListener('click', function(event) {
           event.preventDefault(); // Evitar comportamiento predeterminado del enlace

@@ -1,15 +1,9 @@
+//funcion para actualizar el contador del carrito cada vez que se reinicia la pagina
 function actualizarContadorCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
     document.getElementById('contador-productos').textContent = totalProductos;
 }
-
-
-
-
-
-
-
 
 function agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion) {
     // Obtener el carrito actual de localStorage o inicializarlo si no existe
@@ -23,7 +17,7 @@ function agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion) {
         precio: parseFloat(precio), // Asegurarse de que el precio sea un número
         imagen: imagen,
         descripcion: descripcion,
-        cantidad: 1 // Inicializar cantidad a 1
+        cantidad: 1 
     };
 
     // Buscar si el producto ya está en el carrito

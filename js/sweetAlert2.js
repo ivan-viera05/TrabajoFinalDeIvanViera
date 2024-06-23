@@ -1,3 +1,4 @@
+//funcion para mostrar el sweetalert2
 const compra = document.querySelector('#btn-compra');
 compra.addEventListener('click', () => {
     Swal.fire({
