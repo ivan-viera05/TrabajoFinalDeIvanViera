@@ -33,9 +33,24 @@ function displayProductDetails() {
           console.error('No se encontraron datos del producto para mostrar.');
       }
   }
-  document.addEventListener('DOMContentLoaded', displayProductDetails);
+// Obtener el botón de "Agregar al carrito"
+const addToCartBtn = document.getElementById('addToCartBtn');
 
+// Agregar un listener para el clic
+addToCartBtn.addEventListener('click', function() {
+    
+    // Obtener los detalles del producto del elemento que se está mostrando
+    let id = document.getElementById('productLink').getAttribute('data-id');
+    let nombre = document.getElementById('productName').textContent;
+    let autor = document.getElementById('productAutor').textContent;
+    let precio = parseFloat(document.getElementById('productPrice').textContent.replace('$', ''));
+    let imagen = document.getElementById('productImage').getAttribute('src');
+    let descripcion = document.getElementById('productDescripcion').textContent;
+   
+    // Llamar a la función para agregar al carrito con los detalles obtenidos
+ agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion);
 
+});
 
 
 

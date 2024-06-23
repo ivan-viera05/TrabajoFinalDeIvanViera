@@ -26,22 +26,35 @@
     <section class="wrapper">
         <nav class="navbar bg-nav p-2">
             <div class="container-fluid text-light d-flex justify-content-start">
-                <h1 class="mx-5 col order-1">El Gitano</h1>
-                <form class="d-flex order-5" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary text-light" type="submit">Search</button>
-                </form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                    <span class="bi bi-list iconospam "></span>
-                </button>
-
+                <div class="container-fluid">
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+                          data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                          <span class="bi bi-list iconospam icon-transition iconos"></span>
+                        </button></div>
+                      <div class="col-3">
+                        <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
+                      </div>
+            
+                      <div class="container-fluid col-6 ">
+                        <div class="row d-flex align-items-center justify-content-end ">
+                            <div class="col-3 text-end"><button class="btn"><a href="../html/carrito.html"> <i class="bi bi-cart-fill text-light   fs-1"></i></a>  </button> <span class="contador-productos" id="contador-productos">0</span> </div>
+                          <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
+                              <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
+                            </button></div>
+                        </div>
+                      </div>
+            
+            
+                    </div>
+                  </div>
                 <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">El Gitano</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
+                            
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -94,8 +107,8 @@
                                     <h3 id="productName" class="title-product montserrat-title col-12 fs-2 mt-4"></h3>
                                     <h4 id="productAutor" class="autor-product text-start oswald-author my-4"></h4>
                                     <div class="price-btn-product d-flex">
-                                        <p id="productPrice" class="price-product my-2"></p>
-                                        <button id="addToCartBtn" class="btn-product mx-1 border d-inline" onclick="agregarAlCarrito()">Agregar al carrito</button>
+                                        <p id="productPrice" class="price-product my-2 no-cambiar-color"></p>
+                                        <button id="addToCartBtn" class="btn-product mx-1 border d-inline" >Agregar al carrito</button>
                                     </div>
                                     <h4 class="text-start oswald-author mt-4">Descripción:</h4>
                                     <div class="scrollbox my-3">
@@ -140,10 +153,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script>document.addEventListener('DOMContentLoaded', displayProductDetails);</script>
+<script src="../js/sweetAlert2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/script.js"></script>
-<script src="../js/productos.js"></script>
+<script src="../js/carrito.js"></script>
 <script src="../js/efects.js"></script>
+<script src="../js/productos.js"></script>
+</script>
 </body>
 
 

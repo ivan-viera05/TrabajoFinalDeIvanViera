@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="icon" href="../assets/book_reading_icon_159273.png" type="image/png" />
+    <title>Contactanos - El Gitano</title>
+</head>
+
+<body>
+    <nav class="navbar navbarr bg-nav p-2">
+        <div class="container-fluid text-light d-flex justify-content-between align-items-center">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-3">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                            aria-label="Toggle navigation">
+                            <span class="bi bi-list iconospam icon-transition iconos"></span>
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <h1 class="mx-5 montserrat-title text-end">El Gitano</h1>
+                    </div>
+
+                    <div class="container-fluid col-6">
+                        <div class="row d-flex align-items-center justify-content-end">
+                            <div class="col-3 text-end">
+                                <button class="btn">
+                                    <a href="html/carrito.html">
+                                        <i class="bi bi-cart-fill text-light fs-1"></i></a>
+                                </button>
+                                <span class="contador-productos" id="contador-productos">0</span>
+                            </div>
+                            <div class="col-3 text-end">
+                                <button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
+                                    <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">
+                        El Gitano
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light text-center" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-center" href="html/contactanos.html">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-center" href="html/carrito.html">Carrito</a>
+                        </li>
+                        <li class="nav-item">>
+                            <a class="nav-link text-light text-center" href="html/sobrenosotros.html"></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <section id="contact" class=" m-5">
+  
+        <h1 class="section-header">Contact</h1>
+        
+        <div class="contact-wrapper align-items-center">
+        
+        <!-- Left contact page --> 
+          
+          <form id="my-form" class="form-horizontal" role="form"  action="https://formspree.io/f/xblrrydg" method="POST">
+             
+            <div class="form-group my-1">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+              </div>
+            </div>
+      
+            <div class="form-group my-1">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+              </div>
+            </div>
+      
+            <textarea class="form-control my-1" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+            
+            <button class="btn btn-primary send-button" id="my-form-button" type="submit" value="SEND">
+              <div class="alt-send-button">
+                <i class="bi bi-send"></i><span class="send-text">SEND</span>
+              </div>
+            
+            </button>
+            <p id="my-form-status"></p>
+            
+          </form>
+          
+        <!-- Left contact page --> 
+          
+            <div class="direct-contact-container">
+      
+              <ul class="contact-list">
+                <li class="list-item"><i class="bi bi-geo-alt-fill text-dark"><span class="contact-text place text-dark">City, State</span></i></li>
+                
+                <li class="list-item"><i class="bi bi-telephone-fill text-dark"><span class="contact-text phone"><a href="tel:1-212-555-5555" class="elemento-especifico text-dark text-decoration-none" title="Give me a call">(212) 555-2368</a></span></i></li>
+                
+                <li class="list-item"><i class="bi bi-envelope text-dark"><span class="contact-text gmail "><a href="mailto:#" title="Send me an email" class="elemento-especifico text-dark text-decoration-none">hitmeup@gmail.com</a></span></i></li>
+                
+              </ul>
+      
+              <hr>
+              <ul class="social-media-list">
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="bi bi-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="bi bi-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="bi bi-instagram" aria-hidden="true"></i></a>
+                </li>       
+              </ul>
+              <hr>
+              <div class="copyright "> <h5 class="elemento-especifico text-dark">&copy; ALL OF THE RIGHTS RESERVED </h5></div>
+            </div>
+        </div>
+      </section>  
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="container-fluid bg-nav">
+        <div class="row">
+            <div class="links d-flex justify-content-center pt-2 my-2 mb-5">
+                <div class="row">
+                    <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
+                        href="html/sobrenosotros.html">sobre nosotros</a>
+                    <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
+                        href="">contactanos</a>
+                </div>
+            </div>
+            <div class="redessociales d-flex justify-content-center">
+                <a href="" class="mx-4"><i class="bi bi-facebook text-light fs-2"></i></a>
+                <a href="" class="mx-4"><i class="bi bi-instagram text-light fs-2"></i></a>
+                <a href="" class="mx-4"><i class="bi bi-twitter text-light fs-2"></i></a>
+                <a href="" class="mx-4"><i class="bi bi-github text-light fs-2"></i></a>
+            </div>
+            <p class="my-5 text-center text-light">
+                © 2024 EL Gitano, Inc. All rights reserved.
+            </p>
+        </div>
+    </footer>  
+
+
+
+
+
+    <script >var form = document.getElementById("my-form");
+  
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("my-form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              alert()
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)</script>
+    <script src="../js/script.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/efects.js"></script>
+  
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        
+</body>
+
+</html>

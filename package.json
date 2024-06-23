@@ -1,0 +1,23 @@
+{
+  "name": "carrito-de-compra",
+  "version": "1.0.0",
+  "description": "Proyecto final para Coder House",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan-viera05/TrabajoFinalDeIvanViera.git"
+  },
+  "author": "Ivan Viera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivan-viera05/TrabajoFinalDeIvanViera/issues"
+  },
+  "homepage": "https://github.com/ivan-viera05/TrabajoFinalDeIvanViera#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sweetalert2": "^11.12.0"
+  }
+}

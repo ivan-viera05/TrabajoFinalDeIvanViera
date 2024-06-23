@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="../assets/book_reading_icon_159273.png" type="image/png">
+    <title>Sobre nosotros - El Gitano</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbarr bg-nav fixed-top p-2">
+        <div class="container-fluid text-light d-flex justify-content-between align-items-center">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                            aria-label="Toggle navigation">
+                            <span class="bi bi-list iconospam icon-transition iconos"></span>
+                        </button></div>
+                    <div class="col-3">
+                        <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
+                    </div>
+
+                    <div class="container-fluid col-6 ">
+                        <div class="row d-flex align-items-center justify-content-end ">
+                            <div class="col-3 text-end"><button class="btn"><a href="html/carrito.html"> <i
+                                            class="bi bi-cart-fill text-light   fs-1"></i></a> </button> <span
+                                    class="contador-productos" id="contador-productos">0</span> </div>
+                            <div class="col-3 text-end"><button id="cambiarColorBtn"
+                                    class="icon-button btn-color icon-transition">
+                                    <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
+                                </button></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">
+                        El Gitano
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light text-center" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-center" href="../html/contactanos.html">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-center" href="../html/sobrenosotros.html">Sobre
+                                nosotros</a>
+                        </li>                     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="carouselExample" class="carousel slide ">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://media.0221.com.ar/p/ccd5467026b6c5d300c4a28e68b91be5/adjuntos/357/imagenes/100/126/0100126844/1200x630/smart/libreriajpeg.jpeg"
+                    class="d-block  carrousel" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static01.nyt.com/images/2018/07/12/universal/es/LIBRERIASESPA1206/LIBRERIASESPA1206-superJumbo.jpg"
+                    class="d-block  carrousel " alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/librerias-madrid-jpg-65bb94c9b4b6b.jpg"
+                    class="d-block  carrousel" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section class="container-fluid my-5 ">
+        <article class="container-fluid">
+            <div class="row">
+
+                <div class="container-fluid col-6 my-5">
+                    <div class="row">
+                        <h2 class="text-center">Sobre Nosotros</h2>
+                        <p>En El Gitano, nos dedicamos apasionadamente a ofrecer una selección excepcional de libros que
+                            inspiran y enriquecen la vida de nuestros lectores. Nuestra misión es conectar a las
+                            personas con historias que dejan huella y fomentan el amor por la lectura en un ambiente
+                            acogedor y amigable.</p>
+                    </div>
+                </div>
+                <div class="container-fluid col-6 my-5">
+                    <div class="row"><img
+                            src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/TX76YXHYDNGMDGZ4P3QX4NW4IA.jpg"
+                            class="col-6" alt="sobre nosotros">
+                        <img src="https://www.infobae.com/new-resizer/a5tU3-v3vcI9A8fLZ5Sh6Yy_L-Y=/arc-anglerfish-arc2-prod-infobae/public/GVVRDBDLWZFS5G4ADAAONJX37I.jpg"
+                            class="col-6" alt="nosotos">
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+<section class="container-fluid  my-5">
+    <article class="container-fluid my-5">
+        <div class="row d-flex justify-content-center">
+            <h3 class="text-center fs-1">Nuestros colaboradores principales</h3>
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <img src=" https://www.ledesmapapelonline.com.ar/wp-content/uploads/2020/07/logo-exito-BAJA.png" class="icono-empresa col-3" alt="">
+                    <img src="https://voligoma.com.ar/wp-content/themes/voligoma/images/logo.png" class="icono-empresa col-3" alt="">
+                    <img src="https://logodownload.org/wp-content/uploads/2019/08/alba-logo-0.png" class="icono-empresa col-3" alt="">
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+    <footer class="container-fluid bg-nav">
+        <div class="row">
+          <div class="links d-flex justify-content-center pt-2 my-2 mb-5">
+            <div class="row">
+              <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center" href="html/sobrenosotros.html">sobre nosotros</a>
+              <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center" href="contactanos.html">contactanos</a>
+            </div>
+          </div>
+          <div class="redessociales d-flex justify-content-center">
+            <a href="" class="mx-4"><i class="bi bi-facebook text-light fs-2"></i></a>
+            <a href="" class="mx-4"><i class="bi bi-instagram text-light fs-2"></i></a>
+            <a href="" class="mx-4"><i class="bi bi-twitter text-light fs-2"></i></a>
+            <a href="" class="mx-4"><i class="bi bi-github text-light fs-2"></i></a>
+          </div>
+          <p class="my-5 text-center text-light">
+            © 2024 EL Gitano, Inc. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

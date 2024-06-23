@@ -1,54 +1,121 @@
-function agregarAlCarrito() {
-    // Obtener los detalles del producto actualmente mostrado
-    let id = document.getElementById('productLink').getAttribute('data-id');
-    let nombre = document.getElementById('productName').textContent;
-    let autor = document.getElementById('productAutor').textContent;
-    let precio = document.getElementById('productPrice').textContent.replace('$', ''); // Quitar el símbolo de $
-    let imagen = document.getElementById('productImage').getAttribute('src');
-    let descripcion = document.getElementById('productDescripcion').textContent;
+function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    document.getElementById('contador-productos').textContent = totalProductos;
+}
 
-    // Crear un objeto con los detalles del producto
+
+
+
+
+
+
+
+function agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion) {
+    // Obtener el carrito actual de localStorage o inicializarlo si no existe
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Crear el nuevo producto
     let producto = {
         id: id,
         nombre: nombre,
         autor: autor,
-        precio: parseFloat(precio), // Convertir a número
+        precio: parseFloat(precio), // Asegurarse de que el precio sea un número
         imagen: imagen,
         descripcion: descripcion,
-        cantidad: 1 // Puedes agregar más propiedades según sea necesario
+        cantidad: 1 // Inicializar cantidad a 1
     };
 
-    // Obtener el array de productos del localStorage o inicializarlo si está vacío
-    let productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    
-
-    // Verificar si el producto ya está en el carrito (usando el ID como identificador único)
-    let productoExistente = productosEnCarrito.find(item => item.id === producto.id);
+    // Buscar si el producto ya está en el carrito
+    let productoExistente = carrito.find(item => item.id === id);
 
     if (productoExistente) {
-        // Si el producto ya existe, aumentar la cantidad
-        productoExistente.cantidad++;
+        // Si el producto ya existe, incrementar la cantidad
+        productoExistente.cantidad += 1;
     } else {
-        // Si el producto no está en el carrito, agregarlo
-        productosEnCarrito.push(producto);
+        // Si el producto no existe, agregarlo al carrito
+        carrito.push(producto);
     }
 
-    // Guardar el array actualizado en el localStorage
-    localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-
-    // Mostrar un mensaje de confirmación (opcional)
-    alert(`El producto "${nombre}" se agregó al carrito.`);
-
-    // Opcional: Redirigir a la página del carrito o actualizar la interfaz de usuario
-    // window.location.href = 'ruta-a-la-pagina-del-carrito.html';
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     
+    actualizarContadorCarrito();
+    Swal.fire({
+        position: 'center',
+        width: '20%',
+        icon: 'success',
+        title: 'Se agregó al carrito',
+        showConfirmButton: false,
+        timer: 1500
+    });
 }
+
+
+function aumentarCantidad(id) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let producto = carrito.find(item => item.id === id);
+    if (producto) {
+        producto.cantidad += 1;
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+        actualizarContadorCarrito();
+    }
+}
+
+function disminuirCantidad(id) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let producto = carrito.find(item => item.id === id);
+    if (producto) {
+        producto.cantidad -= 1;
+        if (producto.cantidad <= 0) {
+            carrito = carrito.filter(item => item.id !== id);
+        }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+        actualizarContadorCarrito();
+    }
+}
+
+
+
+
+
 function mostrarCarrito() {
-    // Obtener los productos del carrito desde el localStorage
-    let productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let carritoContainer = document.querySelector(".contenedor-carrito");
+    carritoContainer.innerHTML = ""; // Limpiar el contenido previo del contenedor
+    let total = 0;
+    carrito.forEach(element => {
+        total += element.precio * element.cantidad;
+        let productoElement = document.createElement('div');
+        
+        productoElement.innerHTML = `
+            <div class="row justify-content-around my-5">
+                <div class="col-6 text-center">
+                    <img src="../assets/${element.imagen}" class="img-book" alt="${element.nombre}">
+                </div>
+                <div class="col-6">
+                    <h2 class="montserrat-title no-cambiar-color">${element.nombre}</h2>
+                    <p class="oswald-author no-cambiar-color">Autor: ${element.autor}</p>
+                    <p class="price-product d-inline no-cambiar-color">Precio: $${element.precio.toFixed(2)}</p>
+                    <p class="no-cambiar-color">Cantidad: ${element.cantidad}</p>
+                    <div class="row d-flex justify-content-around ">
+                            <button class="btn btn-primary col-2 no-cambiar-color d-flex justify-content-center aling-items-center" onclick="aumentarCantidad('${element.id}')"><span class="fs-4">+</span></button>
+                            <button class="btn btn-primary col-2 no-cambiar-color d-flex justify-content-center aling-items-center" onclick="disminuirCantidad('${element.id}')" ><span class="fs-4">-</span></button>
+                        </div>
+                </div>
+            </div>
+        `;
+       
+        carritoContainer.appendChild(productoElement);
+    });
+    document.getElementById('total-productos').textContent = `Total: $${total.toFixed(2)}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarContadorCarrito();
+    mostrarCarrito();
     
-    // Mostrar los productos en la consola
-    console.log("Productos en el carrito:", productosEnCarrito);
-  }
-  mostrarCarrito();
+    mostrarLibros();
+});

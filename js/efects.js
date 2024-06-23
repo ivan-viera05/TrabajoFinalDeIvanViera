@@ -25,6 +25,7 @@ const footer = document.querySelector('footer');
 const textElements = document.querySelectorAll('.text-light');
 const priceElements = document.querySelectorAll('.no-cambiar-color');
 const icon = document.querySelector('#icon');
+const darkTextElements = document.querySelectorAll('.text-dark'); // Selecciona los elementos con clase 'text-dark'
 btn.addEventListener('click', function () {
 
   if (icon.classList.contains('bi-sun-fill')) {
@@ -36,6 +37,10 @@ btn.addEventListener('click', function () {
     setTimeout(() => {
       icon.classList.remove('icon-rotate');
     }, 500);
+    darkTextElements.forEach(function (element) {
+      element.classList.remove('text-dark');
+      element.classList.add('text-light');
+    });
   } else {
     icon.classList.remove('bi-moon-stars-fill');
     icon.classList.add('bi-sun-fill');
@@ -45,6 +50,10 @@ btn.addEventListener('click', function () {
     setTimeout(() => {
       icon.classList.remove('icon-rotate');
     }, 500);
+    darkTextElements.forEach(function (element) {
+      element.classList.remove('text-light');
+      element.classList.add('text-dark');
+    });
   }
   // Alternar entre las clases 'fondo-negro' y 'fondo-blanco' en el body
   document.body.classList.toggle('fondo-negro');
@@ -78,4 +87,12 @@ btn.addEventListener('click', function () {
   priceElements.forEach(function (element) {
     element.classList.remove('text-light-oscuro');
   });
+});
+
+
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.elements.name.value = '';
+  e.target.elements.email.value = '';
+  e.target.elements.message.value = '';
 });
