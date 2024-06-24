@@ -24,66 +24,62 @@
 </head>
 <body onload="displayProductDetails()">
     <section class="wrapper">
-        <nav class="navbar bg-nav p-2">
-            <div class="container-fluid text-light d-flex justify-content-start">
-                <div class="container-fluid">
-                    <div class="row d-flex justify-content-center align-items-center">
-                      <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                          <span class="bi bi-list iconospam icon-transition iconos"></span>
+        <nav class="navbar navbarr bg-nav  p-2">
+            <div class="container-fluid text-light d-flex justify-content-between align-items-center">
+              <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                  <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                      <span class="bi bi-list iconospam icon-transition iconos"></span>
+                    </button></div>
+                  <div class="col-3">
+                    <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
+                  </div>
+        
+                  <div class="container-fluid col-6 ">
+                    <div class="row d-flex align-items-center justify-content-end ">
+                      <div class="col-3 text-end"><button class="btn"><a href="../html/carrito.html"> <i class="bi bi-cart-fill text-light   fs-1"></i></a>  </button> <span class="contador-productos" id="contador-productos">0</span> </div>
+                      <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
+                          <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
                         </button></div>
-                      <div class="col-3">
-                        <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
-                      </div>
-            
-                      <div class="container-fluid col-6 ">
-                        <div class="row d-flex align-items-center justify-content-end ">
-                            <div class="col-3 text-end"><button class="btn"><a href="../html/carrito.html"> <i class="bi bi-cart-fill text-light   fs-1"></i></a>  </button> <span class="contador-productos" id="contador-productos">0</span> </div>
-                          <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
-                              <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
-                            </button></div>
-                        </div>
-                      </div>
-            
-            
                     </div>
                   </div>
-                <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">El Gitano</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                            
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active text-light text-center" aria-current="page"
-                                    href="../index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light text-center" href="#">Contactanos</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-light text-center" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Géneros
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item text-light" href="#">Acción</a></li>
-                                    <li><a class="dropdown-item text-light" href="#">Policial</a></li>
-                                    <li><a class="dropdown-item text-light" href="#">Ciencia ficción</a></li>
-                                    <li><a class="dropdown-item text-light" href="#">Terror</a></li>
-                                    <li><a class="dropdown-item text-light" href="#">Drama</a></li>
-                                    <li><a class="dropdown-item text-light" href="#">Romántica</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+        
+        
                 </div>
+              </div>
+              <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h2 class="offcanvas-title text-light text-end" id="offcanvasDarkNavbarLabel">
+                    El Gitano
+                  </h2>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex align-items-center">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item my-3">
+                      <a class="nav-link active text-light text-center fs-5" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item my-3">
+                      <a class="nav-link text-light text-center fs-5" href="../html/contactanos.html">Contactanos</a>
+                    </li>
+                    <li class="nav-item my-3">
+                      <a class="nav-link text-light text-center fs-5" href="../html/sobrenosotros.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item my-3">
+                      <a class="nav-link text-light text-center fs-5" href="../html/carrito.html">Tienda</a>
+                    </li>
+                  </ul>
+                  
+                </div>
+                <p class="my-5 text-center text-light">
+                  © 2024 EL Gitano, Inc. All rights reserved.
+                </p>
+              </div>
             </div>
-        </nav>
+          </nav>
 
         <article class="p-3" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -131,18 +127,14 @@
                 <a class=" text-decoration-none fs-4  my-2 text-light col-sm-12 col-md-3 text-center"
                     href="">sobre nosotros</a>
                 <a class=" text-decoration-none fs-4  my-2 text-light col-sm-12 col-md-3 text-center"
-                    href="">Blog</a>
-                <a class=" text-decoration-none fs-4  my-2 text-light col-sm-12 col-md-3 text-center"
-                    href="">nuestro equipo</a>
-                <a class=" text-decoration-none fs-4  my-2 text-light col-sm-12 col-md-3 text-center"
                     href="">contactanos</a>
             </div>
         </div>
         <div class="redessociales d-flex justify-content-center">
-            <a href="" class="mx-4"><i class="bi bi-facebook text-light fs-2 "></i></a>
-            <a href="" class="mx-4"><i class="bi bi-instagram text-light fs-2 "></i></a>
-            <a href="" class="mx-4"><i class="bi bi-twitter text-light fs-2 "></i></a>
-            <a href="" class="mx-4"><i class="bi bi-github text-light fs-2 "></i></a>
+            <a href="https://www.facebook.com" class="mx-4"><i class="bi bi-facebook text-light fs-2 "></i></a>
+            <a href="https://www.instagram.com" class="mx-4"><i class="bi bi-instagram text-light fs-2 "></i></a>
+            <a href="https://www.twitter.com" class="mx-4"><i class="bi bi-twitter text-light fs-2 "></i></a>
+            <a href="https://www.github.com" class="mx-4"><i class="bi bi-github text-light fs-2 "></i></a>
         </div>
         <p class="my-5 text-center text-light">
             © 2024 EL Gitano, Inc. All rights reserved.

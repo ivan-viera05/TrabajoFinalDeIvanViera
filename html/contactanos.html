@@ -19,68 +19,63 @@
 </head>
 
 <body>
-    <nav class="navbar navbarr bg-nav p-2">
-        <div class="container-fluid text-light d-flex justify-content-between align-items-center">
-            <div class="container-fluid">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-3">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                            aria-label="Toggle navigation">
-                            <span class="bi bi-list iconospam icon-transition iconos"></span>
-                        </button>
-                    </div>
-                    <div class="col-3">
-                        <h1 class="mx-5 montserrat-title text-end">El Gitano</h1>
-                    </div>
+  <nav class="navbar navbarr bg-nav  p-2">
+    <div class="container-fluid text-light d-flex justify-content-between align-items-center">
+      <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+              <span class="bi bi-list iconospam icon-transition iconos"></span>
+            </button></div>
+          <div class="col-3">
+            <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
+          </div>
 
-                    <div class="container-fluid col-6">
-                        <div class="row d-flex align-items-center justify-content-end">
-                            <div class="col-3 text-end">
-                                <button class="btn">
-                                    <a href="html/carrito.html">
-                                        <i class="bi bi-cart-fill text-light fs-1"></i></a>
-                                </button>
-                                <span class="contador-productos" id="contador-productos">0</span>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
-                                    <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="container-fluid col-6 ">
+            <div class="row d-flex align-items-center justify-content-end ">
+              <div class="col-3 text-end"><button class="btn"><a href="../html/carrito.html"> <i class="bi bi-cart-fill text-light   fs-1"></i></a>  </button> <span class="contador-productos" id="contador-productos">0</span> </div>
+              <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
+                  <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
+                </button></div>
             </div>
-            <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title text-light text-center" id="offcanvasDarkNavbarLabel">
-                        El Gitano
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active text-light text-center" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-center" href="html/contactanos.html">Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-center" href="html/carrito.html">Carrito</a>
-                        </li>
-                        <li class="nav-item">>
-                            <a class="nav-link text-light text-center" href="html/sobrenosotros.html"></a>
-                        </li>
-                       
-                    </ul>
-                </div>
-            </div>
+          </div>
+
+
         </div>
-    </nav>
+      </div>
+      <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title text-light text-end" id="offcanvasDarkNavbarLabel">
+            El Gitano
+          </h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex align-items-center">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item my-3">
+              <a class="nav-link active text-light text-center fs-5" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item my-3">
+              <a class="nav-link text-light text-center fs-5" href="../html/contactanos.html">Contactanos</a>
+            </li>
+            <li class="nav-item my-3">
+              <a class="nav-link text-light text-center fs-5" href="../html/sobrenosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item my-3">
+              <a class="nav-link text-light text-center fs-5" href="../html/carrito.html">Tienda</a>
+            </li>
+          </ul>
+          
+        </div>
+        <p class="my-5 text-center text-light">
+          © 2024 EL Gitano, Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </nav>
+
     
     
     
@@ -92,7 +87,7 @@
         
         <!-- Left contact page --> 
           
-          <form id="my-form" class="form-horizontal" role="form"  action="https://formspree.io/f/xblrrydg" method="POST">
+          <form id="my-form" class="form-horizontal container-fluid" role="form"  action="https://formspree.io/f/xblrrydg" method="POST">
              
             <div class="form-group my-1">
               <div class="col-sm-12">
@@ -108,8 +103,8 @@
       
             <textarea class="form-control my-1" rows="10" placeholder="MESSAGE" name="message" required></textarea>
             
-            <button class="btn btn-primary send-button" id="my-form-button" type="submit" value="SEND">
-              <div class="alt-send-button">
+            <button class="btn btn-primary send-button col-12 text-center" id="my-form-button" type="submit" value="SEND">
+              <div class="alt-send-button d-flex ">
                 <i class="bi bi-send"></i><span class="send-text">SEND</span>
               </div>
             
@@ -120,29 +115,30 @@
           
         <!-- Left contact page --> 
           
-            <div class="direct-contact-container">
+            <div class="direct-contact-container container-fluid">
       
-              <ul class="contact-list">
-                <li class="list-item"><i class="bi bi-geo-alt-fill text-dark"><span class="contact-text place text-dark">City, State</span></i></li>
+              <ul class="contact-list d-flex align-items-center row ">
+
+                <li class="list-item"><i class="bi bi-geo-alt-fill text-dark"><span class="contact-text place text-dark mx-1 ">buenos aires, glew</span></i></li>
                 
-                <li class="list-item"><i class="bi bi-telephone-fill text-dark"><span class="contact-text phone"><a href="tel:1-212-555-5555" class="elemento-especifico text-dark text-decoration-none" title="Give me a call">(212) 555-2368</a></span></i></li>
+                <li class="list-item"><i class="bi bi-telephone-fill text-dark"><span class="contact-text phone"><a href="tel:15-11-1620-8986" class="elemento-especifico text-dark text-decoration-none mx-1" title="Give me a call">(022) 46-78152</a></span></i></li>
                 
-                <li class="list-item"><i class="bi bi-envelope text-dark"><span class="contact-text gmail "><a href="mailto:#" title="Send me an email" class="elemento-especifico text-dark text-decoration-none">hitmeup@gmail.com</a></span></i></li>
+                <li class="list-item"><i class="bi bi-envelope text-dark"><span class="contact-text gmail "><a href="mailto:#" title="Send me an email" class="elemento-especifico text-dark text-decoration-none mx-1">ivanvieraop@gmail.com</a></span></i></li>
                 
               </ul>
       
               <hr>
               <ul class="social-media-list">
-                <li><a href="#" target="_blank" class="contact-icon">
+                <li><a href="https://www.whatsapp.com" target="_blank" class="contact-icon">
                   <i class="bi bi-whatsapp" aria-hidden="true"></i></a>
                 </li>
-                <li><a href="#" target="_blank" class="contact-icon">
+                <li><a href="https://www.facebook.com" target="_blank" class="contact-icon">
                   <i class="bi bi-facebook" aria-hidden="true"></i></a>
                 </li>
-                <li><a href="#" target="_blank" class="contact-icon">
+                <li><a href="https://www.twitter.com" target="_blank" class="contact-icon">
                   <i class="bi bi-twitter" aria-hidden="true"></i></a>
                 </li>
-                <li><a href="#" target="_blank" class="contact-icon">
+                <li><a href=" https://www.instagram.com" target="_blank" class="contact-icon">
                   <i class="bi bi-instagram" aria-hidden="true"></i></a>
                 </li>       
               </ul>
@@ -171,16 +167,16 @@
             <div class="links d-flex justify-content-center pt-2 my-2 mb-5">
                 <div class="row">
                     <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
-                        href="html/sobrenosotros.html">sobre nosotros</a>
+                        href="../html/sobrenosotros.html">sobre nosotros</a>
                     <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
-                        href="">contactanos</a>
+                        href="../html/contactanos.html">contactanos</a>
                 </div>
             </div>
             <div class="redessociales d-flex justify-content-center">
-                <a href="" class="mx-4"><i class="bi bi-facebook text-light fs-2"></i></a>
-                <a href="" class="mx-4"><i class="bi bi-instagram text-light fs-2"></i></a>
-                <a href="" class="mx-4"><i class="bi bi-twitter text-light fs-2"></i></a>
-                <a href="" class="mx-4"><i class="bi bi-github text-light fs-2"></i></a>
+                <a href=" https://www.facebook.com  " class="mx-4"><i class="bi bi-facebook text-light fs-2"></i></a>
+                <a href="https://www.instagram.com" class="mx-4"><i class="bi bi-instagram text-light fs-2"></i></a>
+                <a href="https://www.twitter.com" class="mx-4"><i class="bi bi-twitter text-light fs-2"></i></a>
+                <a href="https://www.github.com" class="mx-4"><i class="bi bi-github text-light fs-2"></i></a>
             </div>
             <p class="my-5 text-center text-light">
                 © 2024 EL Gitano, Inc. All rights reserved.

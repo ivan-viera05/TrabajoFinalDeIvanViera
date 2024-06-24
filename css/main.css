@@ -397,20 +397,14 @@ textarea {
   transform: translate3d(0px, -29px, 0px);
 }
 
-/* Begin Right Contact Page */
-.direct-contact-container {
- 
-}
 
-/* Location, Phone, Email Section */
 .contact-list {
   list-style-type: none;
-  margin-left: -30px;
-  padding-right: 20px;
+
 }
 
 .list-item {
-  line-height: 4;
+ 
   color: #000000;
 }
 
@@ -420,17 +414,7 @@ textarea {
   color: #000000;
 }
 
-.place {
-  margin-left: 62px;
-}
 
-.phone {
-  margin-left: 56px;
-}
-
-.gmail {
-  margin-left: 53px;
-}
 
 
 .contact-text a:hover {

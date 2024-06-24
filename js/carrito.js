@@ -37,7 +37,7 @@ function agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion) {
     actualizarContadorCarrito();
     Swal.fire({
         position: 'center',
-        width: '20%',
+        width: '50%',
         icon: 'success',
         title: 'Se agregó al carrito',
         showConfirmButton: false,
@@ -85,12 +85,13 @@ function mostrarCarrito() {
         let productoElement = document.createElement('div');
         
         productoElement.innerHTML = `
+        
             <div class="row justify-content-around my-5">
-                <div class="col-6 text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-6 text-center">
                     <img src="../assets/${element.imagen}" class="img-book" alt="${element.nombre}">
                 </div>
-                <div class="col-6">
-                    <h2 class="montserrat-title no-cambiar-color">${element.nombre}</h2>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-6 text-center">
+                    <h2 class="montserrat-title no-cambiar-color text-center">${element.nombre}</h2>
                     <p class="oswald-author no-cambiar-color">Autor: ${element.autor}</p>
                     <p class="price-product d-inline no-cambiar-color">Precio: $${element.precio.toFixed(2)}</p>
                     <p class="no-cambiar-color">Cantidad: ${element.cantidad}</p>
@@ -100,6 +101,8 @@ function mostrarCarrito() {
                         </div>
                 </div>
             </div>
+        
+            <hr>
         `;
        
         carritoContainer.appendChild(productoElement);
