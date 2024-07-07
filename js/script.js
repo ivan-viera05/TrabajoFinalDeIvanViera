@@ -31,6 +31,7 @@ function mostrarLibros(libros) {
       contenedor.innerHTML += productoHTML;
   });
 }
+mostrarLibros();
 
 // Función para cargar el archivo JSON y mostrar los libros
 function cargarLibros() {
