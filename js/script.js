@@ -1,3 +1,5 @@
+
+let libros = [];
 // Función para quitar acentos de una cadena de texto
 function quitarAcentos(texto) {
   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -31,7 +33,7 @@ function mostrarLibros(libros) {
       contenedor.innerHTML += productoHTML;
   });
 }
-mostrarLibros();
+mostrarLibros(libros);
 
 // Función para cargar el archivo JSON y mostrar los libros
 function cargarLibros() {
