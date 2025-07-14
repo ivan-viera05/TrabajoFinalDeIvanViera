@@ -490,7 +490,234 @@ hr {
   border-color: rgba(255,255,255,.6);
 }
 
-/* Begin Media Queries*/
+/* Estilos para la sección de libros destacados */
+#seccion-destacados {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 40px 20px;
+  margin: 40px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#seccion-destacados h2 {
+  color: #495057;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#seccion-destacados .lead {
+  color: #6c757d;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+#ver-todos-libros {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+#ver-todos-libros:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+#volver-destacados {
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#volver-destacados:hover {
+  transform: translateX(-3px);
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Animación suave para las transiciones de sección */
+#todos-los-libros, #seccion-destacados {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Estilos para la sección de filtros mejorada */
+.filters-section {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+}
+
+.filters-section h2 {
+  color: #495057;
+  font-weight: 600;
+}
+
+.filters-section .text-muted {
+  color: #6c757d !important;
+}
+
+/* Estilos para los dropdowns de filtros */
+.filters-section .dropdown-toggle {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.filters-section .dropdown-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filters-section .dropdown-toggle:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.filters-section .dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+}
+
+.filters-section .dropdown-item {
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.filters-section .dropdown-item:hover {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  transform: translateX(5px);
+}
+
+.filters-section .dropdown-item i {
+  width: 16px;
+  text-align: center;
+}
+
+.filters-section .dropdown-divider {
+  margin: 0.25rem 0;
+  border-color: #e9ecef;
+}
+
+/* Estilos para el buscador */
+.filters-section .input-group .form-control {
+  border-radius: 8px 0 0 8px;
+  border: 2px solid #e9ecef;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filters-section .input-group .form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.filters-section .input-group .btn {
+  border-radius: 0 8px 8px 0;
+  border: 2px solid #007bff;
+  border-left: none;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  transition: all 0.3s ease;
+}
+
+.filters-section .input-group .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para el botón volver a destacados */
+#volver-destacados {
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+#volver-destacados:hover {
+  transform: translateX(-3px);
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para los badges de filtros activos */
+#active-filters {
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.filter-badge {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filter-badge .remove-filter {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-badge .remove-filter:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#clear-filters {
+  border-radius: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#clear-filters:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters-section .row > div {
+    margin-bottom: 1rem;
+  }
+  
+  .filters-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  #volver-destacados {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .contact-wrapper {
     display: flex;
