@@ -24,59 +24,103 @@
 </head>
 <body onload="displayProductDetails()">
     <section class="wrapper">
-        <nav class="navbar navbarr bg-nav  p-2">
-            <div class="container-fluid text-light d-flex justify-content-between align-items-center">
-              <div class="container-fluid">
-                <div class="row d-flex justify-content-center align-items-center">
-                  <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                      <span class="bi bi-list iconospam icon-transition iconos"></span>
-                    </button></div>
-                  <div class="col-3">
-                    <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
-                  </div>
-        
-                  <div class="container-fluid col-6 ">
-                    <div class="row d-flex align-items-center justify-content-end ">
-                      <div class="col-3 text-end"><button class="btn"><a href="../html/carrito.html"> <i class="bi bi-cart-fill text-light   fs-1"></i></a>  </button> <span class="contador-productos" id="contador-productos">0</span> </div>
-                      <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
-                          <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
-                        </button></div>
-                    </div>
-                  </div>
-        
-        
+        <nav class="navbar navbarr bg-nav fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-content d-flex justify-content-between align-items-center w-100 px-3 py-2">
+                <!-- Menú hamburguesa -->
+                <button class="navbar-toggler-custom" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                  <i class="bi bi-list"></i>
+                </button>
+
+                <!-- Logo/Título -->
+                <a href="../index.html" class="navbar-brand-custom">
+                  <h1 class="montserrat-title mb-0">El Gitano</h1>
+                </a>
+
+                <!-- Iconos de acción -->
+                <div class="navbar-actions d-flex align-items-center gap-3">
+                  <!-- Carrito con badge -->
+                  <a href="../html/carrito.html" class="cart-icon-wrapper position-relative">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class="contador-productos" id="contador-productos">0</span>
+                  </a>
+
+                  <!-- Botón tema -->
+                  <button id="cambiarColorBtn" class="theme-toggle-btn">
+                    <i id="icon" class="bi bi-sun-fill"></i>
+                  </button>
                 </div>
               </div>
+            </div>
               <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
                 aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
-                  <h2 class="offcanvas-title text-light text-end" id="offcanvasDarkNavbarLabel">
-                    El Gitano
-                  </h2>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                  <div class="offcanvas-brand-wrapper">
+                    <i class="bi bi-book-half me-2"></i>
+                    <h2 class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">
+                      El Gitano
+                    </h2>
+                  </div>
+                  <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
                 </div>
-                <div class="offcanvas-body d-flex align-items-center">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item my-3">
-                      <a class="nav-link active text-light text-center fs-5" aria-current="page" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item my-3">
-                      <a class="nav-link text-light text-center fs-5" href="../html/contactanos.html">Contactanos</a>
-                    </li>
-                    <li class="nav-item my-3">
-                      <a class="nav-link text-light text-center fs-5" href="../html/sobrenosotros.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item my-3">
-                      <a class="nav-link text-light text-center fs-5" href="../html/carrito.html">Tienda</a>
-                    </li>
-                  </ul>
-                  
+                <div class="offcanvas-body">
+                  <nav class="sidebar-nav">
+                    <ul class="navbar-nav sidebar-menu">
+                      <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="../index.html">
+                          <i class="bi bi-house-door-fill"></i>
+                          <span>Inicio</span>
+                          <i class="bi bi-chevron-right arrow-icon"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="../html/carrito.html">
+                          <i class="bi bi-shop"></i>
+                          <span>Tienda</span>
+                          <i class="bi bi-chevron-right arrow-icon"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="../html/sobrenosotros.html">
+                          <i class="bi bi-info-circle-fill"></i>
+                          <span>Sobre Nosotros</span>
+                          <i class="bi bi-chevron-right arrow-icon"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="../html/contactanos.html">
+                          <i class="bi bi-envelope-fill"></i>
+                          <span>Contáctanos</span>
+                          <i class="bi bi-chevron-right arrow-icon"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-                <p class="my-5 text-center text-light">
-                  © 2024 EL Gitano, Inc. All rights reserved.
-                </p>
+                <div class="offcanvas-footer">
+                  <div class="sidebar-social">
+                    <a href="https://www.facebook.com" target="_blank" class="social-link">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-link">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-link">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/1159891620" target="_blank" class="social-link">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                  </div>
+                  <p class="sidebar-copyright">
+                    © 2024 El Gitano<br>
+                    <span>Todos los derechos reservados</span>
+                  </p>
+                </div>
               </div>
             </div>
           </nav>

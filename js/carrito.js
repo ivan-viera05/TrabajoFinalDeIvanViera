@@ -2,7 +2,18 @@
 function actualizarContadorCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-    document.getElementById('contador-productos').textContent = totalProductos;
+    const contadorElement = document.getElementById('contador-productos');
+    
+    if (contadorElement) {
+        contadorElement.textContent = totalProductos;
+        
+        // Ocultar el contador si es 0
+        if (totalProductos === 0) {
+            contadorElement.classList.add('hidden');
+        } else {
+            contadorElement.classList.remove('hidden');
+        }
+    }
 }
 
 function agregarAlCarrito(id, nombre, autor, precio, imagen, descripcion) {
