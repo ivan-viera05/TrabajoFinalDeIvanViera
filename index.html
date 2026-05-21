@@ -1,271 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="assets/book_reading_icon_159273.png" type="image/png" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <title>El Gitano</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincón del Lector | Librería Premium</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="El Rincón del Lector - Encuentra los mejores libros de ciencia ficción, terror, policial y romance.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/book_reading_icon_159273.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="wraper">
-
-  <nav class="navbar navbarr bg-nav fixed-top p-2">
-    <div class="container-fluid text-light d-flex justify-content-between align-items-center">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-3"> <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-              <span class="bi bi-list iconospam icon-transition iconos"></span>
-            </button></div>
-          <div class="col-3">
-            <h1 class="mx-5 montserrat-title text-end texto-imagen">El Gitano</h1>
-          </div>
-
-          <div class="container-fluid col-6 ">
-            <div class="row d-flex align-items-center justify-content-end ">
-              <div class="col-3 text-end"><button class="btn"><a href="html/carrito.html"> <i
-                      class="bi bi-cart-fill text-light   fs-1"></i></a> </button> <span class="contador-productos"
-                  id="contador-productos">0</span> </div>
-              <div class="col-3 text-end"><button id="cambiarColorBtn" class="icon-button btn-color icon-transition">
-                  <i id="icon" class="bi bi-sun-fill iconos colordelsol fs-1"></i>
-                </button></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="nav-brand">El Rincón del Lector</a>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <div class="cart-icon-container" id="cartBtn">
+                <i class="bi bi-bag"></i>
+                <span class="cart-count" id="cartCount" style="display: none;">0</span>
             </div>
-          </div>
-
-
         </div>
-      </div>
-      <div class="offcanvas offcanvas-start desplegable" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h2 class="offcanvas-title text-light text-end" id="offcanvasDarkNavbarLabel">
-            El Gitano
-          </h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <!-- Puedes cambiar a hero_background.png o hero_beige.png según preferencia -->
+        <img src="assets/hero_library.png" alt="El Rincón del Lector" class="hero-bg">
+        <div class="hero-content">
+            <h1 class="hero-title">Un libro es un regalo <span>para siempre</span></h1>
+            <p class="hero-subtitle">Descubre historias inolvidables en nuestra colección curada de clásicos y novedades.</p>
+            <button class="btn-primary" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">Explorar Colección</button>
         </div>
-        <div class="offcanvas-body d-flex align-items-center">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item my-3">
-              <a class="nav-link active text-light text-center fs-5" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item my-3">
-              <a class="nav-link text-light text-center fs-5" href="html/contactanos.html">Contactanos</a>
-            </li>
-            <li class="nav-item my-3">
-              <a class="nav-link text-light text-center fs-5" href="html/sobrenosotros.html">Sobre Nosotros</a>
-            </li>
-            <li class="nav-item my-3">
-              <a class="nav-link text-light text-center fs-5" href="html/carrito.html">Tienda</a>
-            </li>
-          </ul>
+    </section>
 
+    <!-- Catalog Section -->
+    <section class="catalog" id="catalogo">
+        <h2 class="section-title">Nuestra Colección</h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="ciencia ficción">Ciencia Ficción</button>
+            <button class="filter-btn" data-filter="policial">Policial</button>
+            <button class="filter-btn" data-filter="terror">Terror</button>
+            <button class="filter-btn" data-filter="romance">Romance</button>
         </div>
-        <p class="my-5 text-center text-light">
-          © 2024 EL Gitano, Inc. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </nav>
-  <a href="https://wa.me/1159891620" class="whatsapp-button" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-  </a>
-  <div class="image-container">
-    <img src="https://turismo.buenosaires.gob.ar/sites/turismo/files/libreria-avila-1500x610.jpg" class="firstimg"
-      alt="Sample Image" />
-    <div class="">
-      <h3 class="text-overlay fs-1">
-        Un libro es un regalo para <br />
-        siempre
-      </h3>
-    </div>
-  </div>
 
-  <!-- Sección de Libros Destacados -->
-  <section class="container-fluid my-5" id="seccion-destacados">
-    <div class="text-center mb-5">
-      <h2 class="montserrat-title fs-1 mb-4">Libros Destacados</h2>
-      <p class="lead">Descubre nuestros títulos más populares</p>
-    </div>
-    <article class="d-flex justify-content-center" id="libros-destacados-section">
-      <div class="row justify-content-center" id="libros-destacados"></div>
-    </article>
-    <div class="text-center mt-5">
-      <button id="ver-todos-libros" class="btn btn-primary btn-lg px-5 py-3">
-        Ver Todos los Libros
-      </button>
-    </div>
-  </section>
+        <div class="products-grid" id="productsGrid">
+            <!-- Los libros se cargarán aquí dinámicamente vía JS -->
+            <p style="text-align:center; grid-column: 1/-1;">Cargando catálogo...</p>
+        </div>
+    </section>
 
-  <main class="container-fluid main" id="todos-los-libros" style="display: none;">
-    <!-- Sección de filtros mejorada -->
-    <div class="filters-section bg-light py-4 mb-4">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Botón volver a destacados -->
-          <div class="col-lg-2 col-md-12 mb-3 mb-lg-0">
-            <button id="volver-destacados" class="btn btn-outline-primary w-100">
-              <i class="bi bi-arrow-left me-2"></i>Volver a Destacados
-            </button>
-          </div>
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+        </div>
+        <p>&copy; 2026 El Rincón del Lector. Todos los derechos reservados.</p>
+    </footer>
 
-          <!-- Título -->
-          <div class="col-lg-4 col-md-12 mb-3 mb-lg-0 text-center text-lg-start">
-            <h2 class="montserrat-title fs-3 mb-0">Catálogo Completo</h2>
-            <p class="text-muted small mb-0">Encuentra tu próxima lectura</p>
-          </div>
-
-          <!-- Filtros de género y precio -->
-          <div class="col-lg-4 col-md-8 mb-3 mb-lg-0">
-            <div class="row g-2">
-              <div class="col-6">
-                <div class="dropdown w-100">
-                  <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false" id="generoButton">
-                    <i class="bi bi-tags me-2"></i>Géneros
-                  </button>
-                  <ul class="dropdown-menu w-100">
-                    <li><a class="dropdown-item" href="#" data-genero="todos">
-                        <i class="bi bi-grid me-2"></i>Todos los géneros</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#" data-genero="ciencia ficción">
-                        <i class="bi bi-rocket me-2"></i>Ciencia ficción</a></li>
-                    <li><a class="dropdown-item" href="#" data-genero="policial">
-                        <i class="bi bi-search me-2"></i>Policial</a></li>
-                    <li><a class="dropdown-item" href="#" data-genero="romance">
-                        <i class="bi bi-heart me-2"></i>Romance</a></li>
-                    <li><a class="dropdown-item" href="#" data-genero="suspenso y drama">
-                        <i class="bi bi-mask me-2"></i>Suspenso y drama</a></li>
-                    <li><a class="dropdown-item" href="#" data-genero="terror">
-                        <i class="bi bi-moon me-2"></i>Terror</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="dropdown w-100">
-                  <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-currency-dollar me-2"></i>Precio
-                  </button>
-                  <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#" data-precio="todos">
-                        <i class="bi bi-grid me-2"></i>Todos los precios</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#" data-precio="menor-mayor">
-                        <i class="bi bi-sort-numeric-up me-2"></i>Menor a mayor</a></li>
-                    <li><a class="dropdown-item" href="#" data-precio="mayor-menor">
-                        <i class="bi bi-sort-numeric-down me-2"></i>Mayor a menor</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#" data-precio="1000-10000">
-                        <i class="bi bi-cash me-2"></i>$1,000 - $10,000</a></li>
-                    <li><a class="dropdown-item" href="#" data-precio="10000-30000">
-                        <i class="bi bi-cash-stack me-2"></i>$10,000 - $30,000</a></li>
-                    <li><a class="dropdown-item" href="#" data-precio="30000+">
-                        <i class="bi bi-gem me-2"></i>Más de $30,000</a></li>
-                  </ul>
-                </div>
-              </div>
+    <!-- Cart Offcanvas -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Tu Compra</h2>
+            <button class="close-cart" id="closeCart"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items render here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
             </div>
-          </div>
-
-          <!-- Buscador -->
-          <div class="col-lg-2 col-md-4">
-            <form class="d-flex" id="searchForm" role="search">
-              <div class="input-group">
-                <input class="form-control buscador" type="search" placeholder="Buscar..." aria-label="Buscar" />
-                <button class="btn btn-primary" type="submit">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
-          </div>
+            <button class="btn-checkout" id="checkoutBtn">Finalizar Compra</button>
         </div>
-
-        <!-- Indicadores de filtros activos -->
-        <div class="row mt-3" id="active-filters" style="display: none;">
-          <div class="col-12">
-            <div class="d-flex align-items-center flex-wrap gap-2">
-              <span class="text-muted small">Filtros activos:</span>
-              <div id="filter-badges"></div>
-              <button class="btn btn-sm btn-outline-danger ms-2" id="clear-filters">
-                <i class="bi bi-x me-1"></i>Limpiar filtros
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Contenido de productos -->
-    <article class="d-flex justify-content-center">
-      <div class="row justify-content-center" id="productos"></div>
-    </article>
-  </main>
-  </article>
-  </main>
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">¡Libro agregado al carrito!</div>
 
-  <footer class="container-fluid bg-nav">
-    <div class="row">
-      <div class="links d-flex justify-content-center pt-2 my-2 mb-5">
-        <div class="row">
-          <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
-            href="html/sobrenosotros.html">sobre nosotros</a>
-          <a class="text-decoration-none fs-4 my-2 text-light col-sm-12 col-md-3 text-center"
-            href="html/contactanos.html">contactanos</a>
-        </div>
-      </div>
-      <div class="redessociales d-flex justify-content-center">
-        <a href="https://www.facebook.com" class="mx-4"><i class="bi bi-facebook text-light fs-2"></i></a>
-        <a href="https://www.instagram.com" class="mx-4"><i class="bi bi-instagram text-light fs-2"></i></a>
-        <a href="https://www.twitter.com" class="mx-4"><i class="bi bi-twitter text-light fs-2"></i></a>
-        <a href="https://www.github.com" class="mx-4"><i class="bi bi-github text-light fs-2"></i></a>
-      </div>
-      <p class="my-5 text-center text-light">
-        © 2024 EL Gitano, Inc. All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script>AOS.init();</script>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="js/carrito.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/sweetAlert2.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-  <script src="js/productos.js"></script>
-
-
-
-
-
-  <script src="js/efects.js"></script>
-
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
 </body>
-
 </html>
